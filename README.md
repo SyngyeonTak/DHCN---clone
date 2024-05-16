@@ -6,7 +6,7 @@ This Repository is on purpose of reproducibility for SBRs model (DHCN) https://g
 
 **Implementation**
 
-Original Code Debugging
+Python Version Compatibility
 
 Optimize in CPU
 
