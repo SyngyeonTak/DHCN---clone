@@ -11,31 +11,31 @@ Created on Sun May 12 18:57:55 2024
 """
 
 
-class MyModel(torch.nn.Module):
-    def __init__(self, emb_size):
-        super(MyModel, self).__init__()
-        self.emb_size = emb_size
-        self.fc = torch.nn.Linear(emb_size, emb_size)
+# class MyModel(torch.nn.Module):
+#     def __init__(self, emb_size):
+#         super(MyModel, self).__init__()
+#         self.emb_size = emb_size
+#         self.fc = torch.nn.Linear(emb_size, emb_size)
 
-    def forward(self, x):
-        return self.fc(x)
+#     def forward(self, x):
+#         return self.fc(x)
 
-    def init_parameters(self):
-        stdv = 1.0 / math.sqrt(self.emb_size)
-        for weight in self.parameters():
-            weight.data.uniform_(-stdv, stdv)
+#     def init_parameters(self):
+#         stdv = 1.0 / math.sqrt(self.emb_size)
+#         for weight in self.parameters():
+#             weight.data.uniform_(-stdv, stdv)
 
 # Example usage
-model = MyModel(100)  # Initialize model with embedding size 5
-model.init_parameters()  # Initialize parameters
-for param in model.parameters():
-    print(param)
+# model = MyModel(100)  # Initialize model with embedding size 5
+# model.init_parameters()  # Initialize parameters
+# for param in model.parameters():
+#     print(param)
     
 
-tensor = torch.tensor([[1, 1, 1, 0], [1, 1, 0, 0]])
-result = tensor.unsqueeze(0)
+# tensor = torch.tensor([[1, 1, 1, 0], [1, 1, 0, 0]])
+# result = tensor.unsqueeze(0)
 
-print(result)    
+# print(result)    
 
 
 # def data_masks(all_sessions, n_node):
@@ -89,3 +89,6 @@ print(result)
 # print("\n(1.0/H_T.sum(axis=1).reshape(1, -1))")
 # print(sparse_matrix.T.multiply(1.0/sparse_matrix.sum(axis=1).reshape(1, -1)))
 # print(sparse_matrix.T.multiply(sparse_matrix.sum(axis=1).reshape(1, -1)))
+
+
+print(torch.cuda.is_available())

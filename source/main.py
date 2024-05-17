@@ -9,8 +9,8 @@ import csv
 
 parser = argparse.ArgumentParser()
 #parser.add_argument('--dataset', default='sample', help='dataset name: diginetica/Nowplaying/sample')
-parser.add_argument('--dataset', default='RetailRocket', help='dataset name: diginetica/Nowplaying/Tmall/RetailRocket/sample')
-parser.add_argument('--epoch', type=int, default=2, help='number of epochs to train for')
+parser.add_argument('--dataset', default='diginetica', help='dataset name: diginetica/Nowplaying/Tmall/RetailRocket/sample')
+parser.add_argument('--epoch', type=int, default=30, help='number of epochs to train for')
 parser.add_argument('--batchSize', type=int, default=100, help='input batch size')
 parser.add_argument('--embSize', type=int, default=100, help='embedding size')
 parser.add_argument('--l2', type=float, default=1e-5, help='l2 penalty')
@@ -25,11 +25,13 @@ print(opt)
 # torch.cuda.set_device(1)
 
 def main():
-    #train_data = pickle.load(open('../datasets/' + opt.dataset + '/train.txt', 'rb'))
-    #test_data = pickle.load(open('../datasets/' + opt.dataset + '/test.txt', 'rb'))
+    # train_data = pickle.load(open('./datasets/' + opt.dataset + '/train.txt', 'rb'))
+    # test_data = pickle.load(open('./datasets/' + opt.dataset + '/test.txt', 'rb'))
 
-    train_data = pickle.load(open('../datasets/' + opt.dataset + '/train_sliced.txt', 'rb'))
-    test_data = pickle.load(open('../datasets/' + opt.dataset + '/train_sliced.txt', 'rb'))
+    print(os.getcwd)
+
+    train_data = pickle.load(open('./datasets/' + opt.dataset + '/train_sliced.txt', 'rb'))
+    test_data = pickle.load(open('./datasets/' + opt.dataset + '/train_sliced.txt', 'rb'))
 
     if opt.dataset == 'diginetica':
         n_node = 43097
@@ -53,7 +55,7 @@ def main():
         best_results['epoch%d' % K] = [0, 0]
         best_results['metric%d' % K] = [0, 0]
                 
-    with open('../results/'+opt.dataset+'_results.csv', 'w', newline='') as results_file:
+    with open('./results/'+opt.dataset+'_results.csv', 'w', newline='') as results_file:
         csv_writer = csv.writer(results_file)
         
         # Write the header row

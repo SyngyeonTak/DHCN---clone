@@ -1,3 +1,1 @@
 Epoch,Train Loss,Recall@5,MRR5,Best Epoch for Recall@5,Best Epoch for MRR5,Train Loss,Recall@10,MRR10,Best Epoch for Recall@10,Best Epoch for MRR10,Train Loss,Recall@20,MRR20,Best Epoch for Recall@20,Best Epoch for MRR20
-0,"tensor(60.2052, grad_fn=<AddBackward0>)",56.99999999999999,25.716666666666665,0,0,"tensor(60.2052, grad_fn=<AddBackward0>)",72.39999999999999,27.899444444444445,0,0,"tensor(60.2052, grad_fn=<AddBackward0>)",75.0,28.08624225447755,0,0
-1,"tensor(59.7112, grad_fn=<AddBackward0>)",57.599999999999994,25.889999999999997,1,1,"tensor(59.7112, grad_fn=<AddBackward0>)",73.8,28.174603174603174,1,1,"tensor(59.7112, grad_fn=<AddBackward0>)",75.6,28.311282504045664,1,1
